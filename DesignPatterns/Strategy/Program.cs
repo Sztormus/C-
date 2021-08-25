@@ -1,9 +1,10 @@
-﻿using System;
-using StrategyPattern.Enums;
+﻿using StrategyPattern.Enums;
+using StrategyPattern.Helpers;
 using StrategyPattern.Models;
 using StrategyPattern.Strategies.Invoice;
 using StrategyPattern.Strategies.SalesTax;
 using StrategyPattern.Strategies.Shipping;
+using System;
 
 namespace StrategyPattern
 {
@@ -11,20 +12,21 @@ namespace StrategyPattern
     {
         public static void Main()
         {
-            #region Input
-            Console.WriteLine("Please select an origin country: ");
+            Signature.Sign("Strategy Pattern", "Author: Piotr Stefaniak", "Based on Pluralsight course");
+
+            Console.WriteLine("\nPlease select an origin country: ");
             var origin = Console.ReadLine()?.Trim();
 
             Console.WriteLine("Please select a destination country: ");
-            var destination  = Console.ReadLine()?.Trim();
+            var destination = Console.ReadLine()?.Trim();
 
             var state = "";
             if (destination == "usa")
             {
                 Console.WriteLine("Please select a destination state: ");
-                state  = Console.ReadLine()?.Trim();
+                state = Console.ReadLine()?.Trim();
             }
-            
+
             Console.WriteLine("Choose one of the following shipping providers.");
             Console.WriteLine("1. PostNord (Swedish Postal Service)");
             Console.WriteLine("2. DHL");
@@ -40,12 +42,11 @@ namespace StrategyPattern
             Console.WriteLine("3. Mail");
             Console.WriteLine("Select invoice delivery options: ");
             var invoiceOption = Convert.ToInt32(Console.ReadLine()?.Trim());
-            #endregion
 
             var order = new Order
             {
-                ShippingDetails = new ShippingDetails 
-                { 
+                ShippingDetails = new ShippingDetails
+                {
                     OriginCountry = origin,
                     DestinationCountry = destination,
                     DestinationState = state
@@ -58,7 +59,7 @@ namespace StrategyPattern
             order.SelectedPayments.Add(new Payment { PaymentProvider = PaymentProvider.Invoice });
 
             order.LineItems.Add(new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m, ItemType.Literature), 1);
-            
+
             Console.WriteLine("Tax:");
             Console.WriteLine(order.GetTax());
 
