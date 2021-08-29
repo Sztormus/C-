@@ -1,2 +1,2 @@
 # Design Patterns
-Easy examples of using the most common design patterns
+Examples of using the most common design patterns
