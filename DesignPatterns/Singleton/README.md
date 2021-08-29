@@ -1,2 +1,2 @@
 # Singleton
-Example of Singleton pattern
+Simple example of Singleton pattern with using Lazy<T> object
