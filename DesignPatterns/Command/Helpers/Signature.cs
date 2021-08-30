@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SingletonPattern.Helpers
+namespace CommandPattern.Helpers
 {
     public static class Signature
     {
