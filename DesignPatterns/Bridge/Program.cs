@@ -1,6 +1,7 @@
 ﻿using System;
+using BridgePattern.Discounts;
 using BridgePattern.Helpers;
-using BridgePattern.Models;
+using BridgePattern.MovieLicenses;
 
 namespace BridgePattern
 {

@@ -1,6 +1,6 @@
 ﻿using BridgePattern.Interfaces;
 
-namespace BridgePattern.Models
+namespace BridgePattern.Discounts
 {
     public class MilitaryDiscount : IDiscount
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using BridgePattern.Interfaces;
 
-namespace BridgePattern.Models
+namespace BridgePattern.MovieLicenses
 {
     public abstract class MovieLicense
     {
